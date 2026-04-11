@@ -1,0 +1,24 @@
+.auth-card {
+  width: 520px;          /* ⬅ bigger card */
+  padding: 2.5rem;      /* ⬅ more breathing space */
+  border-radius: 14px;  /* ⬅ smoother corners */
+}
+
+/* Bigger heading */
+.auth-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Bigger inputs */
+.auth-card .form-control {
+  height: 48px;
+  font-size: 1rem;
+}
+
+/* Bigger button */
+.auth-card button {
+  height: 48px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}

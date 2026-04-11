@@ -1,0 +1,50 @@
+/* Navbar */
+.app-navbar {
+  background: linear-gradient(90deg, #1e40af, #2563eb);
+
+  padding: 2.1rem 2.2rem !important; /* increased height */
+
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Brand */
+.app-navbar .navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff !important;
+}
+
+/* Links */
+.app-navbar .nav-link {
+  color: #e5e7eb !important;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.app-navbar .nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* Buttons */
+.app-navbar .btn {
+  padding: 0.45rem 1.2rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* Login button (outline style) */
+.app-navbar .btn-outline-light {
+  border: 1px solid #ffffff;
+}
+
+/* Register button (solid) */
+.app-navbar .btn-light {
+  background-color: #ffffff;
+  color: #1e40af;
+  border: none;
+}

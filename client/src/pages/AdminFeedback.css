@@ -1,0 +1,19 @@
+.feedback-card {
+  transition: all 0.25s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.feedback-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Rating animation */
+.feedback-rating {
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.feedback-card:hover .feedback-rating {
+  transform: scale(1.15);
+}

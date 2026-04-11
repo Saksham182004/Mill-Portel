@@ -1,0 +1,14 @@
+.faint-blue-navbar {
+  background-color: #e8f4fb; /* faint blue */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* optional: text color tweaks */
+.faint-blue-navbar .nav-link,
+.faint-blue-navbar .navbar-brand {
+  color: #0f172a;
+}
+
+.faint-blue-navbar .nav-link:hover {
+  color: #0369a1;
+}
