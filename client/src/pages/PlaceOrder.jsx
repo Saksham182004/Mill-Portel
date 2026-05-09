@@ -31,7 +31,7 @@ const PlaceOrder = () => {
   useEffect(() => {
     const fetchPricing = async () => {
       try {
-        const res = await fetch("http://localhost:8080/api/pricing", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/pricing`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
@@ -88,7 +88,7 @@ const PlaceOrder = () => {
 
     try {
       /* 1️⃣ Create Order */
-      const res = await fetch("http://localhost:8080/api/orders", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/orders`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -120,7 +120,7 @@ const PlaceOrder = () => {
 
         /* 2️⃣ Create Razorpay Order */
         const rpRes = await fetch(
-          "http://localhost:8080/api/payments/create-order",
+          `${import.meta.env.VITE_API_URL}/api/payments/create-order`,
           {
             method: "POST",
             headers: {
@@ -149,7 +149,7 @@ const PlaceOrder = () => {
           handler: async function (response) {
             /* 4️⃣ Verify Payment */
             const verifyRes = await fetch(
-              "http://localhost:8080/api/payments/verify",
+              `${import.meta.env.VITE_API_URL}/api/payments/verify`,
               {
                 method: "POST",
                 headers: {

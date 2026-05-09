@@ -18,7 +18,7 @@ const Home = () => {
 
     const fetchUser = async () => {
       try {
-        const res = await fetch("http://localhost:8080/api/protected", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/protected`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

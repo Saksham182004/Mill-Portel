@@ -20,7 +20,7 @@ const CustomerFeedback = () => {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:8080/api/feedback", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/feedback`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

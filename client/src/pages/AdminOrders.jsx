@@ -10,7 +10,7 @@ const AdminOrders = () => {
   // ================= FETCH ALL ORDERS =================
   const fetchOrders = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/orders", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/orders`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -33,7 +33,7 @@ const AdminOrders = () => {
   const updateStatus = async (orderId, status) => {
     try {
       const res = await fetch(
-        `http://localhost:8080/api/orders/${orderId}/status`,
+        `${import.meta.env.VITE_API_URL}/api/orders/${orderId}/status`,
         {
           method: "PUT", // ✅ MUST be PUT (matches backend)
           headers: {

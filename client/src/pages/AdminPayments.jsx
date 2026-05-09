@@ -7,7 +7,7 @@ const AdminPayments = () => {
 
   const fetchPayments = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/orders", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/orders`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -29,7 +29,7 @@ const AdminPayments = () => {
   const markAsPaid = async (orderId) => {
     try {
       const res = await fetch(
-        `http://localhost:8080/api/orders/${orderId}/pay`,
+        `${import.meta.env.VITE_API_URL}/api/orders/${orderId}/pay`,
         {
           method: "PUT",
           headers: {

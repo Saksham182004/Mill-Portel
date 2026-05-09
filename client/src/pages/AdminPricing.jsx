@@ -9,7 +9,7 @@ const AdminPricing = () => {
   useEffect(() => {
     const fetchPricing = async () => {
       try {
-        const res = await fetch("http://localhost:8080/api/pricing", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/pricing`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -35,7 +35,7 @@ const AdminPricing = () => {
   // 🔹 save price to DB
   const handleSave = async (item) => {
     try {
-      const res = await fetch("http://localhost:8080/api/pricing", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/pricing`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

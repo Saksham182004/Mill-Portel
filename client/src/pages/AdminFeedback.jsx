@@ -9,7 +9,7 @@ const AdminFeedback = () => {
   useEffect(() => {
     const fetchFeedback = async () => {
       try {
-        const res = await fetch("http://localhost:8080/api/feedback", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/feedback`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
