@@ -14,6 +14,10 @@ exports.createRazorpayOrder = async (req, res) => {
       return res.status(404).json({ message: "Order not found" });
     }
 
+    if(order.customer.toString()!==req.user.id){
+      return res.status(403).json({message:"Not your order"})
+    }
+
     // 2️⃣ Only allow online payments
     if (!["UPI", "Bank Transfer"].includes(order.paymentMethod)) {
       return res
@@ -75,6 +79,12 @@ exports.verifyPayment = async (req, res) => {
     if (!order) {
       return res.status(404).json({ message: "Order not found" });
     }
+
+    if(order.customer.toString()!==req.user.id){
+      return res.status(403).json({message:"Not your order"})
+    }
+
+
 
     // 3️⃣ Update order payment status
     order.paymentStatus = "Paid";
