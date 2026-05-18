@@ -1,4 +1,5 @@
 const Order = require("../models/order");
+const Price = require("../models/Pricing")
 
 // @desc    Create new order
 // @route   POST /api/orders
@@ -9,12 +10,18 @@ const createOrder = async (req, res) => {
       items,
       address,
       note,
-      paymentMethod,
-      grandTotal,
+      paymentMethod
     } = req.body;
 
     if (!items || items.length === 0) {
       return res.status(400).json({ message: "No order items" });
+    }
+
+    let grandTotal = 0;
+
+    for(let item of items){
+      const getPrice = await Price.findOne({item :item.name});
+      grandTotal+= item.qty * getPrice.price;
     }
 
     const order = await Order.create({
